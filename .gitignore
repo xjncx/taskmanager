@@ -1,0 +1,36 @@
+# Бинарники
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# go build / go run временные файлы
+/build/
+/bin/
+/dist/
+
+# Go модульный кэш
+/pkg/
+
+# GoLand / VS Code / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Операционные системы
+.DS_Store
+Thumbs.db
+
+# Сборка go
+*.log
+
+# По желанию — кэш go test
+*.coverprofile
+*.testresult
+
+# GitHub Copilot / JetBrains
+*.iml
