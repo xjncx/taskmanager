@@ -2,11 +2,11 @@ package api
 
 import "time"
 
-type CreateTaskRequest struct {
-	Duration int `json:"duration"`
+type CreateTaskResponse struct {
+	ID string `json:"id"`
 }
 
-type CreateTaskResponse struct {
+type TaskResponse struct {
 	ID        string        `json:"id"`
 	State     string        `json:"status"`
 	CreatedAt time.Time     `json:"createdAt"`

@@ -3,6 +3,7 @@ package repository
 import "errors"
 
 var (
-	ErrTaskNotFound = errors.New("task not found")
-	ErrTaskExists   = errors.New("task already exists")
+	ErrTaskNotFound   = errors.New("task not found")
+	ErrTaskExists     = errors.New("task already exists")
+	ErrStorageFailure = errors.New("storage failure")
 )

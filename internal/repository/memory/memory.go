@@ -53,6 +53,5 @@ func (r *InMemoryRepo) Delete(id uuid.UUID) error {
 
 	t.Cancel()
 	delete(r.tasks, id)
-
 	return nil
 }

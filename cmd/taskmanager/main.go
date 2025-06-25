@@ -3,20 +3,35 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/xjncx/taskmanager/internal/api"
+	"github.com/xjncx/taskmanager/internal/manager"
 	repository "github.com/xjncx/taskmanager/internal/repository/memory"
 	service "github.com/xjncx/taskmanager/internal/service"
 )
 
 func main() {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("env file not found")
+	}
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	repo := repository.NewInMemoryRepo()
-	taskService := service.NewService(repo)
+	tm := manager.NewTaskManager(repo)
+	taskService := service.NewService(tm)
 	handler := api.NewHandler(taskService)
 	router := api.NewRouter(handler)
 
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":" + port,
 		Handler: router,
 	}
 

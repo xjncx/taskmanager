@@ -91,7 +91,7 @@ func (t *Task) MarkDone() {
 
 func (t *Task) IsRunning() bool {
 	t.mu.RLock()
-	defer t.mu.Unlock()
+	defer t.mu.RUnlock()
 	return t.Data.State == StateRunning
 }
 
