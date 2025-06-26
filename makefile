@@ -18,10 +18,6 @@ dev:
 test:
 	go test ./...
 
-# Цель: запуск mockgen
-mock:
-	mockgen -source=internal/service/contract.go -destination=internal/service/mocks/contract_mock.go -package=mocks
-
 # Цель: удалить бинарники
 clean:
 	rm -rf bin/

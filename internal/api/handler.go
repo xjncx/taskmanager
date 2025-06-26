@@ -76,7 +76,7 @@ func (h *Handler) DeleteTask(w http.ResponseWriter, r *http.Request) {
 		handleError(w, err)
 		return
 	}
-	w.WriteHeader(http.StatusNoContent)
+	writeJSON(w, http.StatusOK, map[string]string{"message": "task deleted successfully"})
 }
 
 func handleError(w http.ResponseWriter, err error) {
