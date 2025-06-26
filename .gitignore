@@ -34,3 +34,7 @@ Thumbs.db
 
 # GitHub Copilot / JetBrains
 *.iml
+# Файлы окружения
+.env
+.env.local
+.env.*.local
